@@ -2,7 +2,7 @@ name: Adyeshach Build
 on:
   push:
     branches:
-      - master
+      - 2.0
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -44,3 +44,14 @@ jobs:
         id: build_4
         if: steps.build_3.outcome == 'failure'
         run: ./gradlew build
+      - name: Archive artifacts
+
+        uses: actions/upload-artifact@v2
+
+        if: success()
+
+        with:
+
+         name: Adyeshach-1
+
+         path: ./*
