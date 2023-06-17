@@ -1,8 +1,13 @@
-name: Adyeshach Build
+name: Adyeshach Build1
 
 on:
 
   workflow_dispatch:
+  push:
+
+    branches:
+
+      - master
 
   
 
